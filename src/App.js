@@ -4,7 +4,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import { connect } from 'react-redux';
-import { setField, updateTime, resetForm } from './redux.js';
+import { setField, updateTime, resetForm, resetFields } from './redux.js';
 import moment from 'moment';
 import Input from './Input.js';
 
@@ -21,7 +21,6 @@ const initialState = {
 
 class App extends Component {
   state = initialState;
-  a;
   componentWillUnmount() {
     clearInterval(this.interval);
   }
@@ -34,7 +33,8 @@ class App extends Component {
       bAgreeTerm,
       countdown,
       setField,
-      resetForm
+      resetForm,
+      resetFields
     } = this.props;
     return (
       <section className="section">
@@ -108,7 +108,7 @@ class App extends Component {
               <button className="button is-link"> Register </button>{' '}
             </div>{' '}
             <div className="control">
-              <button className="button is-text" onClick={() => resetForm()}>
+              <button className="button is-text" onClick={() => resetFields()}>
                 {' '}
                 Reset{' '}
               </button>{' '}
@@ -120,6 +120,9 @@ class App extends Component {
   }
 }
 
-export default connect(state => state, { setField, updateTime, resetForm })(
-  App
-);
+export default connect(state => state, {
+  setField,
+  updateTime,
+  resetForm,
+  resetFields
+})(App);

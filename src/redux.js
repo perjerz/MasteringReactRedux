@@ -7,6 +7,7 @@ export const GET_WEATHER = 'GET_WEATHER';
 export const GET_WEATHER_PENDING = 'GET_WEATHER_PENDING';
 export const GET_WEATHER_FULFILLED = 'GET_WEATHER_FULFILLED';
 export const GET_WEATHER_REJECTED = 'GET_WEATHER_REJECTED';
+export const RESET_FIELDS = 'RESET_FIELDS';
 
 const initialState = {
   name: '',
@@ -40,6 +41,15 @@ export const getWeather = location => {
   return {
     type: GET_WEATHER,
     weather: axios.get(`/api/location/search/?query=${location}`)
+  };
+};
+
+export const resetFields = () => {
+  return {
+    type: RESET_FIELDS,
+    payload: new Promise(resolve => {
+      setTimeout(() => resolve(initialState), 2000);
+    })
   };
 };
 
