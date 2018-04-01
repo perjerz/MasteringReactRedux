@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import 'bulma/css/bulma.css';
-import logo from './logo.svg';
-import './App.css';
+import './Register.css';
 
 import { connect } from 'react-redux';
 import { setField, updateTime, resetForm, resetFields } from './redux.js';
 import moment from 'moment';
-import Input from './Input.js';
+import Input from '../../common/Input.js';
 
 const closeTime = moment('2018-04-02 10:00');
 

@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Register from './features/event/Register';
 import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
-import reducer from './redux.js';
+import reducer from './features/event/redux.js';
 import { createStore, applyMiddleware, compose } from 'redux';
 import promiseMiddleware from 'redux-promise-middleware';
 
@@ -17,7 +17,7 @@ const store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Register />
   </Provider>,
   document.getElementById('root')
 );
