@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import 'bulma/css/bulma.css';
+
 import Register from './features/event/Register';
 import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
